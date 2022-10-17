@@ -1,35 +1,3 @@
 databaseChangeLog:
-  - changeSet:
-      id: 1
-      author: toliyansky
-      changes:
-        - createTable:
-            tableName: Client
-            columns:
-              - column:
-                  name: uuid
-                  type: uuid
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: name
-                  type: text
-                  constraints:
-                    nullable: false
-              - column:
-                  name: accountsLimit
-                  type: long
-                  constraints:
-                    nullable: false
-              - column:
-                  name: banned
-                  type: boolean
-                  defaultValueBoolean: false
-                  constraints:
-                    nullable: false
-              - column:
-                  name: createdAt
-                  type: datetime
-                  constraints:
-                    nullable: false
+  - include:
+      file: db/changelog/client-changeset.yaml
