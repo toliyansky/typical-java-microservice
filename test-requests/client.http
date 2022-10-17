@@ -1,0 +1,13 @@
+### Get client by id
+GET http://localhost:8080/api/client?id=83a3676f-8a13-44e8-8ff3-47c4221ac89e
+Accept: application/json
+
+### Create client
+POST http://localhost:8080/api/client
+Content-Type: application/json
+
+{
+  "name": "Anatoliy",
+  "accountsLimit": 10,
+  "banned": false
+}

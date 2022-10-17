@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: typical-java-microservice
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:file:./h2db;MODE=PostgreSQL;DATABASE_TO_UPPER=false;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+
+logging:
+  level:
+    dev.toliyansky: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,prometheus"
+
+#server:
+#  ssl:
+#    enabled: true
+#    key-store-type: PKCS12
+#    key-store: classpath:keystore/awaregram-license-server-keystore.p12
+#    key-password: changeit
+#    client-auth: need
+#    trust-store: classpath:keystore/awaregram-license-server-truststore.p12
+#    trust-store-password: changeit
+#  port: 443
